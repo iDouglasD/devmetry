@@ -123,7 +123,7 @@ export function FAQ() {
 
   return (
     <section ref={sectionRef} id="faq" className="py-24 lg:py-32">
-      <div className="mx-auto max-w-2xl px-4 lg:px-8">
+      <div className="mx-auto max-w-[700px] px-4 lg:px-8">
         <span className="text-sm text-text-secondary block mb-3">
           {"// frequently asked"}
         </span>

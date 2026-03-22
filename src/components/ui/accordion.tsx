@@ -8,7 +8,6 @@ import {
   useCallback,
   useContext,
   useId,
-  useRef,
   useState,
 } from "react";
 import { cn } from "@/lib/utils";
@@ -50,13 +49,11 @@ type AccordionItemProps = HTMLAttributes<HTMLDivElement> & {
 type ItemContextValue = {
   value: string;
   isOpen: boolean;
-  contentRef: React.RefObject<HTMLDivElement | null>;
 };
 
 const ItemContext = createContext<ItemContextValue>({
   value: "",
   isOpen: false,
-  contentRef: { current: null },
 });
 
 function AccordionItem({
@@ -66,11 +63,10 @@ function AccordionItem({
   ...props
 }: AccordionItemProps) {
   const { openId } = useContext(AccordionContext);
-  const contentRef = useRef<HTMLDivElement>(null);
   const isOpen = openId === value;
 
   return (
-    <ItemContext.Provider value={{ value, isOpen, contentRef }}>
+    <ItemContext.Provider value={{ value, isOpen }}>
       <div className={cn("py-4", className)} {...props}>
         {children}
       </div>

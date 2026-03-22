@@ -55,16 +55,15 @@ export function Hero() {
       COUNTER_DATA.forEach((item, i) => {
         const el = counterRefs.current[i];
         if (!el) return;
-        gsap.from(el, {
-          textContent: 0,
+        const obj = { val: 0 };
+        gsap.to(obj, {
+          val: item.value,
           duration: 2,
           delay: 0.8,
           ease: "power1.out",
-          snap: { textContent: 1 },
+          snap: { val: 1 },
           onUpdate() {
-            el.textContent = Math.round(
-              Number(el.textContent)
-            ).toLocaleString();
+            el.textContent = obj.val.toLocaleString();
           },
         });
       });
