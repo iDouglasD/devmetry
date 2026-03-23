@@ -17,9 +17,7 @@ describe("Hero", () => {
 	it("renders the heading and CTA", () => {
 		render(<Hero />);
 
-		expect(
-			screen.getByRole("heading", { level: 1 }),
-		).toBeInTheDocument();
+		expect(screen.getByRole("heading", { level: 1 })).toBeInTheDocument();
 
 		expect(
 			screen.getByRole("button", { name: /explore your metrics/i }),
