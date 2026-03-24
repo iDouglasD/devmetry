@@ -43,3 +43,6 @@ next-env.d.ts
 
 .claude
 .superpowers
+
+# Prisma generated client
+src/generated/
