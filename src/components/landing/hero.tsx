@@ -138,30 +138,36 @@ export function Hero() {
 				"-=1.2",
 			);
 
-			// Contribution grid — diagonal wave pulse (continuous)
-			gsap.to(".hero-cell", {
-				opacity: (_i, el) => Number((el as HTMLElement).dataset.base ?? 0.3),
-				duration: 1.4,
-				ease: "sine.inOut",
-				stagger: { each: 0.02, from: "start", grid: "auto" },
-				repeat: -1,
-				yoyo: true,
-			});
+			// Heavy continuous effects — desktop only. Mobile GPUs struggle
+			// with overlapping repeat loops + the other always-on animations.
+			const isDesktop = window.matchMedia("(min-width: 768px)").matches;
 
-			// Scanning line across the card
-			gsap.fromTo(
-				".hero-scan",
-				{ yPercent: -100, opacity: 0 },
-				{
-					yPercent: 200,
-					opacity: 1,
-					duration: 3.2,
-					delay: 1.4,
-					ease: "power2.inOut",
+			if (isDesktop) {
+				// Contribution grid — diagonal wave pulse (continuous)
+				gsap.to(".hero-cell", {
+					opacity: (_i, el) => Number((el as HTMLElement).dataset.base ?? 0.3),
+					duration: 1.4,
+					ease: "sine.inOut",
+					stagger: { each: 0.02, from: "start", grid: "auto" },
 					repeat: -1,
-					repeatDelay: 2.4,
-				},
-			);
+					yoyo: true,
+				});
+
+				// Scanning line across the card
+				gsap.fromTo(
+					".hero-scan",
+					{ yPercent: -100, opacity: 0 },
+					{
+						yPercent: 200,
+						opacity: 1,
+						duration: 3.2,
+						delay: 1.4,
+						ease: "power2.inOut",
+						repeat: -1,
+						repeatDelay: 2.4,
+					},
+				);
+			}
 
 			// Aurora blobs — slow drift
 			gsap.to(".hero-aurora-a", {
@@ -241,9 +247,9 @@ export function Hero() {
 		>
 			{/* Aurora background */}
 			<div className="pointer-events-none absolute inset-0 overflow-hidden">
-				<div className="hero-aurora-a absolute top-1/3 left-1/4 h-[520px] w-[520px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent-green/10 blur-3xl" />
-				<div className="hero-aurora-b absolute top-1/2 left-3/4 h-[460px] w-[460px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent-purple/10 blur-3xl" />
-				<div className="absolute top-2/3 left-1/2 h-[380px] w-[380px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent-cyan/[0.06] blur-3xl" />
+				<div className="hero-aurora-a absolute top-1/3 left-1/4 h-[520px] w-[520px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent-green/10 blur-xl md:blur-3xl" />
+				<div className="hero-aurora-b absolute top-1/2 left-3/4 h-[460px] w-[460px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent-purple/10 blur-xl md:blur-3xl" />
+				<div className="absolute top-2/3 left-1/2 h-[380px] w-[380px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent-cyan/[0.06] blur-xl md:blur-3xl" />
 				{/* Subtle grid overlay */}
 				<div
 					className="absolute inset-0 opacity-[0.035]"
@@ -261,7 +267,7 @@ export function Hero() {
 			<div className="relative mx-auto grid w-full max-w-6xl grid-cols-1 items-center gap-12 px-4 lg:grid-cols-2 lg:gap-16 lg:px-8">
 				{/* Left column — text */}
 				<div className="flex flex-col gap-6">
-					<span className="hero-eyebrow inline-flex w-fit items-center gap-2 rounded-full border border-border bg-bg-surface/60 px-3 py-1 text-text-secondary text-xs backdrop-blur-sm">
+					<span className="hero-eyebrow inline-flex w-fit items-center gap-2 rounded-full border border-border bg-bg-surface/60 px-3 py-1 text-text-secondary text-xs md:backdrop-blur-sm">
 						<span className="relative flex h-1.5 w-1.5">
 							<span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent-green opacity-75" />
 							<span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-accent-green" />
@@ -313,7 +319,7 @@ export function Hero() {
 
 					<div
 						ref={cardInnerRef}
-						className="hero-card relative overflow-hidden rounded-xl border border-border bg-bg-surface/90 shadow-2xl backdrop-blur-xl"
+						className="hero-card relative overflow-hidden rounded-xl border border-border bg-bg-surface/90 shadow-2xl md:backdrop-blur-xl"
 						style={{ transformStyle: "preserve-3d" }}
 					>
 						{/* Scanning line */}

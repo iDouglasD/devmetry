@@ -220,7 +220,7 @@ export function Navbar() {
 					className="fixed inset-0 z-40 flex flex-col items-center justify-center gap-8 bg-bg-base/95 pt-16 backdrop-blur-2xl"
 				>
 					{/* Ambient glow */}
-					<div className="pointer-events-none absolute top-1/3 left-1/2 h-[400px] w-[400px] -translate-x-1/2 rounded-full bg-accent-green/[0.08] blur-3xl" />
+					<div className="pointer-events-none absolute top-1/3 left-1/2 h-[400px] w-[400px] -translate-x-1/2 rounded-full bg-accent-green/[0.08] blur-xl md:blur-3xl" />
 
 					<div className="relative flex flex-col items-center gap-2">
 						<span className="mb-6 font-mono text-accent-green text-xs uppercase tracking-[0.3em]">
