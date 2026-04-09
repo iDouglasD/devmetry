@@ -167,7 +167,7 @@ export function FAQ() {
 	return (
 		<section ref={sectionRef} id="faq" className="relative py-24 lg:py-32">
 			<div className="pointer-events-none absolute inset-0 overflow-hidden">
-				<div className="absolute bottom-0 left-1/4 h-[380px] w-[500px] rounded-full bg-accent-purple/[0.05] blur-3xl" />
+				<div className="absolute bottom-0 left-1/4 h-[380px] w-[500px] rounded-full bg-accent-purple/[0.05] blur-xl md:blur-3xl" />
 			</div>
 
 			<div className="relative mx-auto grid max-w-6xl grid-cols-1 gap-12 px-4 lg:grid-cols-[1fr_1.4fr] lg:gap-16 lg:px-8">
