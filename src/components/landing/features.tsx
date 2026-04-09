@@ -240,7 +240,7 @@ export function Features() {
 		<section ref={sectionRef} id="features" className="relative py-24 lg:py-32">
 			{/* Ambient accent */}
 			<div className="pointer-events-none absolute inset-0 overflow-hidden">
-				<div className="absolute top-0 left-1/2 h-[320px] w-[720px] -translate-x-1/2 rounded-full bg-accent-purple/[0.06] blur-3xl" />
+				<div className="absolute top-0 left-1/2 h-[320px] w-[720px] -translate-x-1/2 rounded-full bg-accent-purple/[0.06] blur-xl md:blur-3xl" />
 			</div>
 
 			<div className="relative mx-auto max-w-6xl px-4 lg:px-8">
@@ -269,7 +269,7 @@ export function Features() {
 						return (
 							<div
 								key={feature.title}
-								className={`feature-card group relative overflow-hidden rounded-xl border border-border bg-bg-surface/70 p-6 backdrop-blur-sm transition-all duration-500 hover:-translate-y-1 ${accent.border} ${
+								className={`feature-card group relative overflow-hidden rounded-xl border border-border bg-bg-surface/70 p-6 transition-all duration-500 hover:-translate-y-1 md:backdrop-blur-sm ${accent.border} ${
 									feature.span === "col-span-2"
 										? "md:col-span-2 lg:col-span-2"
 										: ""

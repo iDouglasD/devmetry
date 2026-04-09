@@ -106,7 +106,7 @@ export function SocialProof() {
 	return (
 		<section ref={sectionRef} className="relative py-24 lg:py-32">
 			<div className="pointer-events-none absolute inset-0 overflow-hidden">
-				<div className="absolute top-1/2 left-1/2 h-[500px] w-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent-green/[0.04] blur-3xl" />
+				<div className="absolute top-1/2 left-1/2 h-[500px] w-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent-green/[0.04] blur-xl md:blur-3xl" />
 			</div>
 
 			<div className="relative mx-auto max-w-6xl px-4 lg:px-8">
@@ -126,7 +126,7 @@ export function SocialProof() {
 					{STATS.map((stat, i) => (
 						<div
 							key={stat.label}
-							className="relative flex flex-col items-center gap-2 bg-bg-surface/80 px-8 py-10 backdrop-blur-sm"
+							className="relative flex flex-col items-center gap-2 bg-bg-surface/80 px-8 py-10 md:backdrop-blur-sm"
 						>
 							<div className="font-bold text-5xl text-accent-green tabular-nums [text-shadow:0_0_28px_rgba(0,255,65,0.35)] lg:text-6xl">
 								<span
@@ -154,7 +154,7 @@ export function SocialProof() {
 						{AVATARS.map((avatar) => (
 							<div
 								key={avatar.id}
-								className={`avatar-item relative flex h-12 w-12 items-center justify-center rounded-full border border-border bg-linear-to-br ${avatar.color} font-semibold text-sm text-text-primary backdrop-blur-sm`}
+								className={`avatar-item relative flex h-12 w-12 items-center justify-center rounded-full border border-border bg-linear-to-br ${avatar.color} font-semibold text-sm text-text-primary md:backdrop-blur-sm`}
 							>
 								{avatar.initials}
 								<span className="absolute right-0 bottom-0 h-3 w-3 rounded-full border-2 border-bg-base bg-accent-green" />
@@ -172,7 +172,7 @@ export function SocialProof() {
 					{QUOTES.map((q) => (
 						<figure
 							key={q.author}
-							className="quote-card relative overflow-hidden rounded-xl border border-border bg-bg-surface/60 p-6 backdrop-blur-sm"
+							className="quote-card relative overflow-hidden rounded-xl border border-border bg-bg-surface/60 p-6 md:backdrop-blur-sm"
 						>
 							<span className="absolute top-2 left-4 font-bold text-6xl text-accent-green/10 leading-none">
 								&ldquo;

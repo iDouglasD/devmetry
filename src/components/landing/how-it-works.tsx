@@ -126,7 +126,7 @@ export function HowItWorks() {
 			className="relative py-24 lg:py-32"
 		>
 			<div className="pointer-events-none absolute inset-0 overflow-hidden">
-				<div className="absolute top-1/3 right-0 h-[400px] w-[500px] rounded-full bg-accent-cyan/[0.05] blur-3xl" />
+				<div className="absolute top-1/3 right-0 h-[400px] w-[500px] rounded-full bg-accent-cyan/[0.05] blur-xl md:blur-3xl" />
 			</div>
 
 			<div className="relative mx-auto max-w-5xl px-4 lg:px-8">
@@ -174,7 +174,7 @@ export function HowItWorks() {
 										</div>
 
 										{/* Terminal */}
-										<div className="overflow-hidden rounded-xl border border-border bg-bg-surface/90 shadow-lg backdrop-blur-sm lg:w-[340px] lg:shrink-0">
+										<div className="overflow-hidden rounded-xl border border-border bg-bg-surface/90 shadow-lg md:backdrop-blur-sm lg:w-[340px] lg:shrink-0">
 											<div className="flex items-center gap-1.5 border-border border-b bg-bg-elevated/80 px-3 py-2">
 												<span className="h-2 w-2 rounded-full bg-[#f85149]" />
 												<span className="h-2 w-2 rounded-full bg-[#d29922]" />
